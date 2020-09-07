@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Note from './Note';
+import Header from './Header';
 
 const Notes = () => {
   const [notes, setNotes] = useState([
@@ -16,12 +17,12 @@ const Notes = () => {
         'Write the second part of Loan Calculator tutorial and explain React-Hook-Forms features',
     },
   ]);
-  
+
   return (
     <div>
-      <h1>Notepad</h1>
+      <Header />
       {notes.map((note) => (
-        <Note key={note.id} title={note.title} body={note.body -m ""} />
+        <Note key={note.id} title={note.title} body={note.body} />
       ))}
     </div>
   );
