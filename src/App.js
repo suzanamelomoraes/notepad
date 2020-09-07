@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Notes from './components/Notes';
 
 function App() {
   return (
-    <div className="App">
-        <h1>Notepad</h1>
+    <div className='App'>
+      <Notes />
     </div>
   );
 }
