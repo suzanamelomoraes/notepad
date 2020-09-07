@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Note from './Note';
 import Header from './Header';
+import NotesTitles from './NotesTitles';
 
 const Notes = () => {
   const [notes, setNotes] = useState([
@@ -21,6 +22,7 @@ const Notes = () => {
   return (
     <div>
       <Header />
+      <NotesTitles notes={notes} />
       {notes.map((note) => (
         <Note key={note.id} title={note.title} body={note.body} />
       ))}
