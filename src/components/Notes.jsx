@@ -82,16 +82,20 @@ const Notes = () => {
   };
 
   return (
-    <div>
-      <Header />
-      <Route path='/'>
-        <NotesTitles notes={notes} />
-      </Route>
+    <div className='grid-container'>
+      <div className='item1' >
+        <Header />
+      </div>
+      <div className='item2'>
+        <Route path='/'>
+          <NotesTitles notes={notes} />
+        </Route>
 
-      <button onClick={handleShowForm}>Add note</button>
-      {showForm && <AddNotes addNote={addNote} notes={notes} />}
+        <button onClick={handleShowForm}>Add note</button>
+        {showForm && <AddNotes addNote={addNote} notes={notes} />}
+      </div>
 
-      <div className='note'>
+      <div className='item3'>
         <Route path='/note/:id'>
           <Note notes={notes} editNote={editNote} />
         </Route>
