@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Note from './Note';
 import Header from './Header';
@@ -7,6 +7,8 @@ import NotesTitles from './NotesTitles';
 import AddNotes from './AddNotes';
 
 const Notes = () => {
+  const history = useHistory();
+
   const [notes, setNotes] = useState([
     {
       id: 1,
@@ -75,6 +77,18 @@ const Notes = () => {
     );
 
     setNotes(newNotes);
+    history.push('/');
+  };
+
+  const removeNote = (id) => {
+    const newNotes = [...notes];
+
+    newNotes.forEach((eachNote, index) =>
+      eachNote.id === id ? newNotes.splice(index, 1) : newNotes
+    );
+
+    setNotes(newNotes);
+    history.push('/');
   };
 
   const handleShowForm = () => {
@@ -83,7 +97,7 @@ const Notes = () => {
 
   return (
     <div className='grid-container'>
-      <div className='item1' >
+      <div className='item1'>
         <Header />
       </div>
       <div className='item2'>
@@ -97,7 +111,7 @@ const Notes = () => {
 
       <div className='item3'>
         <Route path='/note/:id'>
-          <Note notes={notes} editNote={editNote} />
+          <Note notes={notes} editNote={editNote} removeNote={removeNote} />
         </Route>
       </div>
     </div>
