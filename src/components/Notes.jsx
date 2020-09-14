@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Note from './Note';
 import Header from './Header';
@@ -45,11 +46,15 @@ const Notes = () => {
   return (
     <div>
       <Header />
-      <NotesTitles notes={notes} />
+      <Route path='/'>
+        <NotesTitles notes={notes} />
+      </Route>
 
       <div className='note'>
         {notes.map((note) => (
-          <Note key={note.id} title={note.title} body={note.body} />
+          <Route path='/note/:id'>
+            <Note key={note.id} title={note.title} body={note.body} />
+          </Route>
         ))}
       </div>
       <button onClick={handleShowForm}>Add note</button>
