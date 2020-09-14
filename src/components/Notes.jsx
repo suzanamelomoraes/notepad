@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Note from './Note';
 import Header from './Header';
+import NotesTitles from './NotesTitles';
 import AddNotes from './AddNotes';
 
 const Notes = () => {
@@ -44,6 +45,8 @@ const Notes = () => {
   return (
     <div>
       <Header />
+      <NotesTitles notes={notes} />
+
       <div className='note'>
         {notes.map((note) => (
           <Note key={note.id} title={note.title} body={note.body} />
