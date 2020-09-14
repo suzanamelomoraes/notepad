@@ -5,9 +5,9 @@ const NotesTitles = ({ notes }) => {
   return (
     <div>
       {notes.map((note) => (
-        <Link to={`/note/${note.id}`}>
-          <p>{note.title}</p>
-        </Link>
+        <p key={note.id}>
+          <Link to={`/note/${note.id}`}>{note.title}</Link>
+        </p>
       ))}
     </div>
   );
