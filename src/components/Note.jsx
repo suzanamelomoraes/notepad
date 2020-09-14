@@ -1,11 +1,16 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const Note = ({ title, body }) => {
+const Note = ({ notes }) => {
+  let { id } = useParams();
+  let ID = Number(id);
+
+  const noteToDisplay = notes.find((note) => note.id === ID);
 
   return (
     <div>
-      <h3>{title}</h3>
-      <p>{body}</p>
+      <h3>{noteToDisplay.title}</h3>
+      <p>{noteToDisplay.body}</p>
     </div>
   );
 };
