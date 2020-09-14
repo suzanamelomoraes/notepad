@@ -24,6 +24,27 @@ const Notes = () => {
       color: '#ff0000',
       favourite: false,
     },
+    {
+      id: 3,
+      title: 'BBQ',
+      body: 'BBQ na casa da Maya',
+      color: '#ff0000',
+      favourite: false,
+    },
+    {
+      id: 4,
+      title: 'Test',
+      body: 'Programming test with Rowan',
+      color: '#ff0000',
+      favourite: false,
+    },
+    {
+      id: 5,
+      title: 'Running time',
+      body: 'Running time at 5pm',
+      color: '#ff0000',
+      favourite: false,
+    },
   ]);
 
   const [showForm, setShowForm] = useState(false);
@@ -39,6 +60,10 @@ const Notes = () => {
     setNotes(newNotes);
   };
 
+  const editNote = (note) => {
+    console.log('edited note', note);
+  };
+
   const handleShowForm = () => {
     setShowForm(true);
   };
@@ -50,15 +75,14 @@ const Notes = () => {
         <NotesTitles notes={notes} />
       </Route>
 
-      <div className='note'>
-        {notes.map((note) => (
-          <Route path='/note/:id'>
-            <Note key={note.id} title={note.title} body={note.body} />
-          </Route>
-        ))}
-      </div>
       <button onClick={handleShowForm}>Add note</button>
       {showForm && <AddNotes addNote={addNote} notes={notes} />}
+
+      <div className='note'>
+        <Route path='/note/:id'>
+          <Note notes={notes} editNote={editNote} />
+        </Route>
+      </div>
     </div>
   );
 };
