@@ -1,8 +1,8 @@
 # Notepad
 
-Notepad App is a simple list of notes you can select and simple form that can be used for creating new notes or editing existing ones.
+- In progress
 
----
+Notepad App is a simple list of notes built using React Hooks to practice CRUD (Create, Read, Update, Delete) principles and routing in React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -32,4 +32,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
