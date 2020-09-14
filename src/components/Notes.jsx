@@ -61,7 +61,20 @@ const Notes = () => {
   };
 
   const editNote = (note) => {
-    console.log('edited note', note);
+    let updatedNote = {};
+    updatedNote.id = note.id;
+    updatedNote.title = note.title;
+    updatedNote.body = note.body;
+    updatedNote.color = '#ff0000';
+    updatedNote.favourite = true;
+    const newNotes = [...notes];
+    newNotes.forEach((eachNote, index) =>
+      eachNote.id === note.id
+        ? newNotes.splice(index, 1, updatedNote)
+        : newNotes
+    );
+
+    setNotes(newNotes);
   };
 
   const handleShowForm = () => {
