@@ -23,23 +23,29 @@ const AddNotes = ({ addNote }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          name='title'
-          className='input'
-          value={value.title}
-          placeholder='Title'
-          onChange={handleInputChange}
-        />
-        <input
-          type='text'
-          name='body'
-          className='input'
-          value={value.body}
-          placeholder='Note body...'
-          onChange={handleInputChange}
-        />
-        <input type='submit' className='button' />
+        <div>
+          <input
+            type='text'
+            name='title'
+            className='input'
+            value={value.title}
+            placeholder='Title'
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <input
+            type='text'
+            name='body'
+            className='input'
+            value={value.body}
+            placeholder='Note body...'
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <input type='submit' className='button' />
+        </div>
       </form>
     </div>
   );
