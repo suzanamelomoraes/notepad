@@ -101,7 +101,7 @@ const Notes = () => {
         <Header />
       </div>
       <div className='notes'>
-        <div className='nav'>
+        <div>
           <Route path='/'>
             <NotesTitles notes={notes} />
           </Route>
