@@ -96,25 +96,27 @@ const Notes = () => {
   };
 
   return (
-    <div className='grid-container'>
-      <div className='item1'>
+    <div className='flex-container'>
+      <div className='header'>
         <Header />
       </div>
-      <div className='item2'>
-        <Route path='/'>
-          <NotesTitles notes={notes} />
-        </Route>
+      <div className='notes'>
+        <div className='nav'>
+          <Route path='/'>
+            <NotesTitles notes={notes} />
+          </Route>
 
-        <button className='button' onClick={handleShowForm}>
-          Add note
-        </button>
-        {showForm && <AddNotes addNote={addNote} notes={notes} />}
-      </div>
+          <button className='button' onClick={handleShowForm}>
+            Add note
+          </button>
+          {showForm && <AddNotes addNote={addNote} notes={notes} />}
+        </div>
 
-      <div className='item3'>
-        <Route path='/note/:id'>
-          <Note notes={notes} editNote={editNote} removeNote={removeNote} />
-        </Route>
+        <div className='item3'>
+          <Route path='/note/:id'>
+            <Note notes={notes} editNote={editNote} removeNote={removeNote} />
+          </Route>
+        </div>
       </div>
     </div>
   );
