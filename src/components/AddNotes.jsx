@@ -34,8 +34,7 @@ const AddNotes = ({ addNote }) => {
           />
         </div>
         <div>
-          <input
-            type='text'
+          <textarea
             name='body'
             className='input'
             value={value.body}

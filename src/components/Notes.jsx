@@ -105,7 +105,9 @@ const Notes = () => {
           <NotesTitles notes={notes} />
         </Route>
 
-        <button onClick={handleShowForm}>Add note</button>
+        <button className='button' onClick={handleShowForm}>
+          Add note
+        </button>
         {showForm && <AddNotes addNote={addNote} notes={notes} />}
       </div>
 
