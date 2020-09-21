@@ -19,14 +19,17 @@ const Note = ({ notes, editNote, removeNote }) => {
         <h3>{noteToDisplay.title}</h3>
         <p>{noteToDisplay.body}</p>
       </div>
-      <div>
-        <button onClick={handleShowForm}>Edit note</button>
+      <div className='buttons'>
+        <button className='button' onClick={handleShowForm}>
+          Edit note
+        </button>
         {showForm && (
           <EditNote editNote={editNote} noteToEdit={noteToDisplay} />
         )}
-      </div>
-      <div>
-        <button onClick={() => removeNote(noteToDisplay.id)}>Delete</button>
+
+        <button className='delete' onClick={() => removeNote(noteToDisplay.id)}>
+          x
+        </button>
       </div>
     </div>
   );
