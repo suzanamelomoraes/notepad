@@ -5,8 +5,10 @@ const NotesTitles = ({ notes }) => {
   return (
     <div>
       {notes.map((note) => (
-        <p key={note.id}>
-          <Link to={`/note/${note.id}`}>{note.title}</Link>
+        <p className='titles' key={note.id}>
+          <Link className='title' to={`/note/${note.id}`}>
+            {note.title}
+          </Link>
         </p>
       ))}
     </div>
