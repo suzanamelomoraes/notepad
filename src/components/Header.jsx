@@ -6,7 +6,9 @@ const Header = () => {
     <div className='header'>
       <h1>Notepad</h1>
       <p>
-        <Link to={'/'}>Home</Link>
+        <Link className='home' to={'/'}>
+          Home
+        </Link>
       </p>
     </div>
   );
